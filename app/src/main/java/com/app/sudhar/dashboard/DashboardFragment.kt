@@ -7,6 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.viewpager2.widget.ViewPager2
 import com.app.sudhar.databinding.FragmentDashboardBinding
+import com.app.sudhar.home.HomeViewPagerAdapter
+import com.app.sudhar.home.ViewPager4Fragment
+import com.app.sudhar.home.Viewpager1Fragment
+import com.app.sudhar.home.Viewpager2Fragment
+import com.app.sudhar.home.Viewpager3Fragment
 
 
 class DashboardFragment : Fragment() {
@@ -23,46 +28,7 @@ class DashboardFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        init()
-    }
-    private fun init(){
-        initSetViews()
-        initClickListener()
-    }
-    private fun initSetViews(){
-        setViewPagerAdapter()
-    }
-    private fun initClickListener(){
 
     }
-    private fun setViewPagerAdapter()=binding.apply{
-        val fragmentList = arrayListOf(
-            Viewpager1Fragment(),
-            Viewpager2Fragment(),
-            Viewpager3Fragment(),
-            ViewPager4Fragment()
-        )
-        viewPager.isUserInputEnabled = true
-        val adapter = DashboardViewPagerAdapter(fragmentList,childFragmentManager,lifecycle)
-        viewPager.adapter = adapter
-        viewPager.registerOnPageChangeCallback(object :
-        ViewPager2.OnPageChangeCallback(){
-            override fun onPageScrolled(
-                position: Int,
-                positionOffset: Float,
-                positionOffsetPixels: Int
-            ) {
-                super.onPageScrolled(position, positionOffset, positionOffsetPixels)
 
-            }
-
-            override fun onPageSelected(position: Int) {
-                super.onPageSelected(position)
-            }
-
-            override fun onPageScrollStateChanged(state: Int) {
-                super.onPageScrollStateChanged(state)
-            }
-        })
-    }
 }
