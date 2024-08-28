@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".dashboard.ViewPager4Fragment">
+
+
+   <ImageView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:src="@drawable/image4"
+       android:scaleType="centerCrop"
+       />
+
+   <TextView
+      android:id="@+id/tvMainHead4"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:fontFamily="sans-serif-black"
+       android:textSize="40sp"
+      android:text="Leading the Charge in Carbon
+       Accountability "
+       android:textColor="@color/white"
+      android:gravity="center"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintBottom_toBottomOf="parent"
+      />
+
+   <TextView
+      android:id="@+id/tvSubHead4"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_margin="20dp"
+      android:textSize="20dp"
+      android:text="Harness the power of data to minimize your plant’s environmental impact and comply with government regulations."
+       android:textColor="@color/white"
+app:layout_constraintTop_toBottomOf="@id/tvMainHead4"
+      android:gravity="center"
+      />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
