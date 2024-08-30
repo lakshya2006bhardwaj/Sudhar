@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/about"
-        android:name="com.app.sudhar.AboutFragment"
+        android:name="com.app.sudhar.about.AboutFragment"
         android:label="fragment_menu"
         tools:layout="@layout/fragment_about" />
     <fragment

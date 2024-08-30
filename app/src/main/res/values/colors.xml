@@ -3,4 +3,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="parrotGreen">#00FF00</color>
+    <color name="darkgrey">#7C7D7E</color>
+    <color name="verydarlgrey">#272A2E</color>
 </resources>

@@ -1,6 +1,5 @@
-package com.app.sudhar
+package com.app.sudhar.about
 
-import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
 import android.text.Spannable
@@ -13,13 +12,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.core.content.ContextCompat
+import com.app.sudhar.R
+import com.app.sudhar.about.adapter.TeamMemberAdapter
+import com.app.sudhar.about.adapter.TeamMemberData
 import com.app.sudhar.databinding.FragmentAboutBinding
-import com.app.sudhar.databinding.FragmentDashboardBinding
 
 class AboutFragment : Fragment() {
     private lateinit var binding: FragmentAboutBinding
+    private lateinit var teamMemberAdapter:TeamMemberAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,7 +40,9 @@ class AboutFragment : Fragment() {
 
         initSetViews()
         initCickListner()
+        setTeamRecyclerView()
     }
+
 
     private fun initSetViews() = binding.apply {
         val spannable = SpannableString(tvVision.text)
@@ -102,7 +105,9 @@ class AboutFragment : Fragment() {
             11, // end
             Spannable.SPAN_EXCLUSIVE_INCLUSIVE
         )
-        sustainable.setSpan( ForegroundColorSpan(ContextCompat.getColor(requireContext(),R.color.parrotGreen)), 4, 11, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        sustainable.setSpan( ForegroundColorSpan(ContextCompat.getColor(requireContext(),
+            R.color.parrotGreen
+        )), 4, 11, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
         sustainable.setSpan( RelativeSizeSpan(1.5f), 4, 11, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
 
 
@@ -112,6 +117,18 @@ class AboutFragment : Fragment() {
     }
 
     private fun initCickListner() {
+
+    }
+
+    private fun setTeamRecyclerView() {
+        teamMemberAdapter=TeamMemberAdapter{pos,data,src->
+            onItemClick(pos,data,src)
+        }
+        binding.rvTeamMember.adapter = teamMemberAdapter
+        teamMemberAdapter.submitList(arrayListOf(TeamMemberData("Khushi","hdvghvjv"),TeamMemberData("Khushi","hdvghvjv"),TeamMemberData("Khushi","hdvghvjv"),TeamMemberData("Khushi","hdvghvjv"),TeamMemberData("Khushi","hdvghvjv")))
+    }
+
+    private fun onItemClick(pos: Int, data: TeamMemberData, src: String) {
 
     }
 
