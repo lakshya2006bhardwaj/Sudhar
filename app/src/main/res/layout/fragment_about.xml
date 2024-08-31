@@ -382,7 +382,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/visionconstraint"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:padding="10dp"
@@ -436,7 +436,7 @@
                     android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:src="@drawable/aboutimg3"
-                    app:layout_constraintEnd_toStartOf="@id/img4"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/img2"
                     app:layout_constraintTop_toBottomOf="@id/visiondetail" />
 
@@ -446,8 +446,8 @@
                     android:layout_height="40dp"
                     android:src="@drawable/aboutimg4"
                     app:layout_constraintEnd_toStartOf="@id/img5"
-                    app:layout_constraintStart_toEndOf="@id/img3"
-                    app:layout_constraintTop_toBottomOf="@id/visiondetail" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/imgtext1" />
 
                 <ImageView
                     android:id="@+id/img5"
@@ -456,7 +456,7 @@
                     android:src="@drawable/aboutimg5"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/img4"
-                    app:layout_constraintTop_toBottomOf="@id/visiondetail" />
+                    app:layout_constraintTop_toBottomOf="@id/imgtext1" />
 
                 <TextView
                     android:id="@+id/imgtext1"
@@ -464,6 +464,7 @@
                     android:layout_height="wrap_content"
                     android:text="Promoting Environmental Awareness"
                     android:textColor="@color/white"
+                    android:textSize="10sp"
                     app:layout_constraintEnd_toEndOf="@id/img1"
                     app:layout_constraintStart_toStartOf="@id/img1"
                     app:layout_constraintTop_toBottomOf="@id/img1" />
@@ -475,6 +476,7 @@
                     android:layout_height="wrap_content"
                     android:text="Empowering Informed Decisions"
                     android:textColor="@color/white"
+                    android:textSize="10sp"
                     app:layout_constraintEnd_toEndOf="@id/img2"
                     app:layout_constraintStart_toStartOf="@id/img2"
                     app:layout_constraintTop_toBottomOf="@id/img2" />
@@ -486,6 +488,7 @@
                     android:layout_height="wrap_content"
                     android:text="Driving Sustainable Innovation"
                     android:textColor="@color/white"
+                    android:textSize="10sp"
                     app:layout_constraintEnd_toEndOf="@id/img3"
                     app:layout_constraintStart_toStartOf="@id/img3"
                     app:layout_constraintTop_toBottomOf="@id/img3" />
@@ -497,6 +500,7 @@
                     android:layout_height="wrap_content"
                     android:text="Fostering Global Collaboration"
                     android:textColor="@color/white"
+                    android:textSize="10sp"
                     app:layout_constraintEnd_toEndOf="@id/img4"
                     app:layout_constraintStart_toStartOf="@id/img4"
                     app:layout_constraintTop_toBottomOf="@id/img4" />
@@ -508,6 +512,7 @@
                     android:layout_height="wrap_content"
                     android:text="Building a legacy for Future Generation"
                     android:textColor="@color/white"
+                    android:textSize="10sp"
                     app:layout_constraintEnd_toEndOf="@id/img5"
                     app:layout_constraintStart_toStartOf="@id/img5"
                     app:layout_constraintTop_toBottomOf="@id/img5" />
@@ -523,8 +528,9 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/impactconstraint"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:padding="10dp"
                 android:background="@color/verydarlgrey"
                 app:layout_constraintBottom_toBottomOf="@id/footimg"
                 app:layout_constraintEnd_toStartOf="@id/footimg"
@@ -545,7 +551,7 @@
 
                 <TextView
                     android:id="@+id/impactdetail"
-                    android:layout_width="190dp"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif"
                     android:gravity="center"
@@ -557,18 +563,19 @@
 
                 <ImageView
                     android:id="@+id/imgThirteen"
-                    android:layout_width="100dp"
+                    android:layout_width="0dp"
                     android:layout_height="100dp"
                     android:src="@drawable/img13_"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/imgSeven"
-
                     app:layout_constraintTop_toBottomOf="@id/impactdetail" />
 
                 <ImageView
                     android:id="@+id/imgSeven"
-                    android:layout_width="100dp"
+                    android:layout_width="0dp"
                     android:layout_height="100dp"
                     android:src="@drawable/img7_"
+                    app:layout_constraintStart_toEndOf="@id/imgThirteen"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/impactdetail" />
 
