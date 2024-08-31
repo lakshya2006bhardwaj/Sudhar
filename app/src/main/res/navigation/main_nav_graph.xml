@@ -17,7 +17,7 @@
         tools:layout="@layout/fragment_about" />
     <fragment
         android:id="@+id/registration"
-        android:name="com.app.sudhar.RegistrationFragment"
+        android:name="com.app.sudhar.registration.RegistrationFragment"
         android:label="fragment_registration"
         tools:layout="@layout/fragment_registration" />
     <fragment
