@@ -204,137 +204,362 @@
                     android:orientation="horizontal"
                     android:scrollbars="none">
 
-                    <LinearLayout
+                    <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:layout_height="wrap_content">
 
                         <ImageView
+                            android:id="@+id/circleOne"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/viewOne"
+                            app:layout_constraintTop_toTopOf="parent"
                             android:src="@drawable/circle" />
+                        <TextView
+                            android:id="@+id/tvJan"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="@id/circleOne"
+                            app:layout_constraintTop_toBottomOf="@id/circleOne"
+                            android:text="Jan"
+                            android:textAlignment="center"
+                            android:fontFamily="@font/acme_regular"
+                            android:textColor="#BC8F5B"
+                            android:textSize="15sp"
+                            />
 
                         <View
+                            android:id="@+id/viewOne"
                             android:layout_width="50dp"
                             android:layout_height="2dp"
-                            android:layout_gravity="center"
+                            app:layout_constraintStart_toEndOf="@id/circleOne"
+                            app:layout_constraintEnd_toEndOf="@id/circleTwo"
+                            app:layout_constraintTop_toTopOf="@id/circleOne"
+                            app:layout_constraintBottom_toBottomOf="@id/circleOne"
                             android:background="@color/white" />
 
                         <ImageView
+                            android:id="@+id/circleTwo"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            app:layout_constraintStart_toEndOf="@id/viewOne"
+                            app:layout_constraintEnd_toStartOf="@id/viewTwo"
+                            app:layout_constraintTop_toTopOf="parent"
                             android:src="@drawable/circle" />
 
                         <View
+                            android:id="@+id/viewTwo"
                             android:layout_width="50dp"
                             android:layout_height="2dp"
-                            android:layout_gravity="center"
+                            app:layout_constraintStart_toEndOf="@id/circleTwo"
+                            app:layout_constraintTop_toTopOf="@id/circleTwo"
+                            app:layout_constraintBottom_toBottomOf="@id/circleTwo"
                             android:background="@color/white" />
-
-                        <ImageView
+                        <TextView
+                            android:id="@+id/tvFeb"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            app:layout_constraintStart_toEndOf="@id/tvJan"
+                            app:layout_constraintEnd_toStartOf="@id/tvMarch"
+                            app:layout_constraintTop_toBottomOf="@id/circleTwo"
+                            android:text="Feb"
+                            android:fontFamily="@font/acme_regular"
+                            android:textColor="#BC8F5B"
+                            android:textSize="15sp"
+                            />
+
+                        <ImageView
+                            android:id="@+id/circleThree"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toEndOf="@id/viewTwo"
+                            app:layout_constraintEnd_toStartOf="@id/viewThree"
+                            app:layout_constraintTop_toTopOf="parent"
                             android:src="@drawable/circle" />
+                        <TextView
+                            android:id="@+id/tvMarch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toEndOf="@id/tvFeb"
+                            app:layout_constraintEnd_toStartOf="@id/tvApril"
+                            app:layout_constraintTop_toBottomOf="@id/circleThree"
+                            android:text="March"
+                            android:fontFamily="@font/acme_regular"
+                            android:textColor="#BC8F5B"
+                            android:textSize="15sp"
+                            />
 
                         <View
+                            android:id="@+id/viewThree"
                             android:layout_width="50dp"
                             android:layout_height="2dp"
                             android:layout_gravity="center"
+                            app:layout_constraintStart_toEndOf="@id/circleThree"
+                            app:layout_constraintTop_toTopOf="@id/circleThree"
+                            app:layout_constraintBottom_toBottomOf="@id/circleThree"
                             android:background="@color/white" />
 
                         <ImageView
+                            android:id="@+id/circleFour"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            app:layout_constraintStart_toEndOf="@id/viewThree"
+                            app:layout_constraintEnd_toStartOf="@id/viewFour"
+                            app:layout_constraintTop_toTopOf="parent"
                             android:src="@drawable/circle" />
+                        <TextView
+                            android:id="@+id/tvApril"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toEndOf="@id/tvMarch"
+                            app:layout_constraintEnd_toStartOf="@id/tvMay"
+                            app:layout_constraintTop_toBottomOf="@id/circleFour"
+                            android:text="April"
+                            android:fontFamily="@font/acme_regular"
+                            android:textColor="#BC8F5B"
+                            android:textSize="15sp"
+                            />
 
                         <View
+                            android:id="@+id/viewFour"
                             android:layout_width="50dp"
                             android:layout_height="2dp"
-                            android:layout_gravity="center"
+                            app:layout_constraintStart_toEndOf="@id/circleFour"
+                            app:layout_constraintTop_toTopOf="@id/circleFour"
+                            app:layout_constraintBottom_toBottomOf="@id/circleFour"
                             android:background="@color/white" />
 
                         <ImageView
+                            android:id="@+id/circleFive"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            app:layout_constraintStart_toEndOf="@id/viewFour"
+                            app:layout_constraintEnd_toStartOf="@id/viewFive"
+                            app:layout_constraintTop_toTopOf="parent"
                             android:src="@drawable/circle" />
+                        <TextView
+                            android:id="@+id/tvMay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toEndOf="@id/tvApril"
+                            app:layout_constraintEnd_toStartOf="@id/tvJune"
+                            app:layout_constraintTop_toBottomOf="@id/circleFive"
+                            android:text="May"
+                            android:fontFamily="@font/acme_regular"
+                            android:textColor="#BC8F5B"
+                            android:textSize="15sp"
+                            />
 
                         <View
+                            android:id="@+id/viewFive"
                             android:layout_width="50dp"
                             android:layout_height="2dp"
-                            android:layout_gravity="center"
+                            app:layout_constraintStart_toEndOf="@id/circleFive"
+                            app:layout_constraintTop_toTopOf="@id/circleFive"
+                            app:layout_constraintBottom_toBottomOf="@id/circleFive"
                             android:background="@color/white" />
 
                         <ImageView
+                            android:id="@+id/circleSix"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            app:layout_constraintStart_toEndOf="@id/viewFive"
+                            app:layout_constraintEnd_toStartOf="@id/viewSix"
+                            app:layout_constraintTop_toTopOf="parent"
                             android:src="@drawable/circle" />
+                        <TextView
+                            android:id="@+id/tvJune"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toEndOf="@id/tvMay"
+                            app:layout_constraintEnd_toStartOf="@id/tvJuly"
+                            app:layout_constraintTop_toBottomOf="@id/circleSix"
+                            android:text="June"
+                            android:fontFamily="@font/acme_regular"
+                            android:textColor="#BC8F5B"
+                            android:textSize="15sp"
+                            />
 
                         <View
+                            android:id="@+id/viewSix"
                             android:layout_width="50dp"
                             android:layout_height="2dp"
-                            android:layout_gravity="center"
+                            app:layout_constraintStart_toEndOf="@id/circleSix"
+                            app:layout_constraintTop_toTopOf="@id/circleSix"
+                            app:layout_constraintBottom_toBottomOf="@id/circleSix"
                             android:background="@color/white" />
 
                         <ImageView
+                            android:id="@+id/circleSeven"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            app:layout_constraintStart_toEndOf="@id/viewSix"
+                            app:layout_constraintEnd_toStartOf="@id/viewSeven"
+                            app:layout_constraintTop_toTopOf="parent"
                             android:src="@drawable/circle" />
+                        <TextView
+                            android:id="@+id/tvJuly"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toEndOf="@id/tvJune"
+                            app:layout_constraintEnd_toStartOf="@id/tvAug"
+                            app:layout_constraintTop_toBottomOf="@id/circleSeven"
+                            android:text="July"
+                            android:fontFamily="@font/acme_regular"
+                            android:textColor="#BC8F5B"
+                            android:textSize="15sp"
+                            />
 
                         <View
+                            android:id="@+id/viewSeven"
                             android:layout_width="50dp"
                             android:layout_height="2dp"
-                            android:layout_gravity="center"
+                            app:layout_constraintStart_toEndOf="@id/circleSeven"
+                            app:layout_constraintTop_toTopOf="@id/circleSeven"
+                            app:layout_constraintBottom_toBottomOf="@id/circleSeven"
                             android:background="@color/white" />
 
                         <ImageView
+                            android:id="@+id/circleEight"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            app:layout_constraintStart_toEndOf="@id/viewSeven"
+                            app:layout_constraintEnd_toStartOf="@id/viewEight"
+                            app:layout_constraintTop_toTopOf="parent"
                             android:src="@drawable/circle" />
+                        <TextView
+                            android:id="@+id/tvAug"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toEndOf="@id/tvJuly"
+                            app:layout_constraintEnd_toStartOf="@id/tvSep"
+                            app:layout_constraintTop_toBottomOf="@id/circleEight"
+                            android:text="Aug"
+                            android:fontFamily="@font/acme_regular"
+                            android:textColor="#BC8F5B"
+                            android:textSize="15sp"
+                            />
 
                         <View
+                            android:id="@+id/viewEight"
                             android:layout_width="50dp"
                             android:layout_height="2dp"
-                            android:layout_gravity="center"
+                            app:layout_constraintStart_toEndOf="@id/circleEight"
+                            app:layout_constraintTop_toTopOf="@id/circleEight"
+                            app:layout_constraintBottom_toBottomOf="@id/circleEight"
                             android:background="@color/white" />
 
                         <ImageView
+                            android:id="@+id/circleNine"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            app:layout_constraintStart_toEndOf="@id/viewEight"
+                            app:layout_constraintEnd_toStartOf="@id/viewNine"
+                            app:layout_constraintTop_toTopOf="parent"
                             android:src="@drawable/circle" />
+                        <TextView
+                            android:id="@+id/tvSep"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toEndOf="@id/tvAug"
+                            app:layout_constraintEnd_toStartOf="@id/tvOct"
+                            app:layout_constraintTop_toBottomOf="@id/circleNine"
+                            android:text="Sep"
+                            android:fontFamily="@font/acme_regular"
+                            android:textColor="#BC8F5B"
+                            android:textSize="15sp"
+                            />
+                        <View
+                            android:id="@+id/viewNine"
+                            android:layout_width="50dp"
+                            android:layout_height="2dp"
+                            app:layout_constraintStart_toEndOf="@id/circleNine"
+                            app:layout_constraintTop_toTopOf="@id/circleNine"
+                            app:layout_constraintBottom_toBottomOf="@id/circleNine"
+                            android:background="@color/white" />
+
+                        <ImageView
+                            android:id="@+id/circleTen"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toEndOf="@id/viewNine"
+                            app:layout_constraintEnd_toStartOf="@id/viewTen"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:src="@drawable/circle" />
+                        <TextView
+                            android:id="@+id/tvOct"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toEndOf="@id/tvSep"
+                            app:layout_constraintEnd_toStartOf="@id/tvNov"
+                            app:layout_constraintTop_toBottomOf="@id/circleTen"
+                            android:text="Oct"
+                            android:fontFamily="@font/acme_regular"
+                            android:textColor="#BC8F5B"
+                            android:textSize="15sp"
+                            />
 
                         <View
+                            android:id="@+id/viewTen"
                             android:layout_width="50dp"
                             android:layout_height="2dp"
-                            android:layout_gravity="center"
+                            app:layout_constraintStart_toEndOf="@id/circleTen"
+                            app:layout_constraintTop_toTopOf="@id/circleTen"
+                            app:layout_constraintBottom_toBottomOf="@id/circleTen"
                             android:background="@color/white" />
 
                         <ImageView
+                            android:id="@+id/circleEleven"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            app:layout_constraintStart_toEndOf="@id/viewTen"
+                            app:layout_constraintEnd_toStartOf="@id/viewEleven"
+                            app:layout_constraintTop_toTopOf="parent"
                             android:src="@drawable/circle" />
+                        <TextView
+                            android:id="@+id/tvNov"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toEndOf="@id/tvOct"
+                            app:layout_constraintEnd_toStartOf="@id/tvDec"
+                            app:layout_constraintTop_toBottomOf="@id/circleEleven"
+                            android:text="Nov"
+                            android:fontFamily="@font/acme_regular"
+                            android:textColor="#BC8F5B"
+                            android:textSize="15sp"
+                            />
 
                         <View
+                            android:id="@+id/viewEleven"
                             android:layout_width="50dp"
                             android:layout_height="2dp"
-                            android:layout_gravity="center"
+                            app:layout_constraintStart_toEndOf="@id/circleEleven"
+                            app:layout_constraintTop_toTopOf="@id/circleEleven"
+                            app:layout_constraintBottom_toBottomOf="@id/circleEleven"
                             android:background="@color/white" />
 
                         <ImageView
+                            android:id="@+id/circleTwelve"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:layout_marginEnd="2dp"
+                            app:layout_constraintStart_toEndOf="@id/viewEleven"
+                            app:layout_constraintEnd_toEndOf="parent"
                             android:src="@drawable/circle" />
-
-                        <View
-                            android:layout_width="50dp"
-                            android:layout_height="2dp"
-                            android:layout_gravity="center"
-                            android:background="@color/white" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
+                        <TextView
+                            android:id="@+id/tvDec"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/circle" />
-                    </LinearLayout>
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/circleTwelve"
+                            android:text="Dec"
+                            android:fontFamily="@font/acme_regular"
+                            android:textColor="#BC8F5B"
+                            android:textSize="15sp"
+                            />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
                 </HorizontalScrollView>
             </LinearLayout>
 
