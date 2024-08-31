@@ -11,8 +11,8 @@
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="-40dp"
-        tools:layout_editor_absoluteY="-81dp">
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -385,6 +385,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:padding="10dp"
                 android:background="@color/verydarlgrey"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/plantImg"
@@ -403,7 +404,7 @@
 
                 <TextView
                     android:id="@+id/visiondetail"
-                    android:layout_width="250dp"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="At the heart of SUDHAR lies a deep commitment to sustainability and environmental stewardship. Our vision is not just about monitoring carbon footprints but about fostering a world where every decision is guided by an awareness of its impact on our planet. We believe in a future where technology and innovation lead the way to a healthier, more sustainable world for generations to come."
                     android:textAlignment="center"
@@ -414,7 +415,7 @@
 
                 <ImageView
                     android:id="@+id/img1"
-                    android:layout_width="40dp"
+                    android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:src="@drawable/aboutimg1"
                     app:layout_constraintEnd_toStartOf="@id/img2"
@@ -423,7 +424,7 @@
 
                 <ImageView
                     android:id="@+id/img2"
-                    android:layout_width="40dp"
+                    android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:src="@drawable/aboutimg2"
                     app:layout_constraintEnd_toStartOf="@id/img3"
@@ -432,7 +433,7 @@
 
                 <ImageView
                     android:id="@+id/img3"
-                    android:layout_width="40dp"
+                    android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:src="@drawable/aboutimg3"
                     app:layout_constraintEnd_toStartOf="@id/img4"
@@ -441,7 +442,7 @@
 
                 <ImageView
                     android:id="@+id/img4"
-                    android:layout_width="40dp"
+                    android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:src="@drawable/aboutimg4"
                     app:layout_constraintEnd_toStartOf="@id/img5"
@@ -450,7 +451,7 @@
 
                 <ImageView
                     android:id="@+id/img5"
-                    android:layout_width="40dp"
+                    android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:src="@drawable/aboutimg5"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -540,8 +541,7 @@
                     android:textSize="30sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                  />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/impactdetail"
@@ -572,46 +572,43 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/impactdetail" />
 
-               <TextView
-                   android:layout_width="0dp"
-                   android:layout_height="wrap_content"
-                   android:text="Coal Mines\nRegistered"
-                   android:textColor="@color/white"
-                   app:layout_constraintTop_toBottomOf="@id/imgThirteen"
-                   app:layout_constraintStart_toStartOf="parent"
-                   app:layout_constraintEnd_toEndOf="@id/imgThirteen"
-                   android:gravity="center"
-                   android:layout_marginTop="-20dp"
-                   />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-20dp"
+                    android:gravity="center"
+                    android:text="Coal Mines\nRegistered"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="@id/imgThirteen"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/imgThirteen" />
 
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="-20dp"
+                    android:gravity="center"
                     android:text="Carbon Emmision reduction"
                     android:textColor="@color/white"
-                    app:layout_constraintTop_toBottomOf="@id/imgSeven"
-                    app:layout_constraintStart_toStartOf="@id/imgSeven"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:gravity="center"
-                    android:layout_marginTop="-20dp"
-                    />
+                    app:layout_constraintStart_toStartOf="@id/imgSeven"
+                    app:layout_constraintTop_toBottomOf="@id/imgSeven" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <Button
                 android:layout_width="190dp"
                 android:layout_height="65dp"
-                android:text="Join Us"
-                android:backgroundTint="@color/parrotGreen"
-                android:textColor="@color/black"
-                app:layout_constraintTop_toBottomOf="@id/impactconstraint"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 android:layout_margin="30dp"
-                android:textSize="40dp"
+                android:backgroundTint="@color/parrotGreen"
                 android:fontFamily="sans-serif"
+                android:text="Join Us"
                 android:textAlignment="center"
-                />
+                android:textColor="@color/black"
+                android:textSize="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/impactconstraint" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
