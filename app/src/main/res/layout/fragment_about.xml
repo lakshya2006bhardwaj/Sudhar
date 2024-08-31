@@ -378,10 +378,10 @@
                 android:layout_height="400dp"
                 android:src="@drawable/about_tree"
                 app:layout_constraintStart_toStartOf="parent"
-
                 app:layout_constraintTop_toBottomOf="@id/rvTeamMember" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/visionconstraint"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -511,6 +511,106 @@
                     app:layout_constraintStart_toStartOf="@id/img5"
                     app:layout_constraintTop_toBottomOf="@id/img5" />
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/footimg"
+                android:layout_width="190dp"
+                android:layout_height="500dp"
+                android:src="@drawable/footimg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/visionconstraint" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/impactconstraint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/verydarlgrey"
+                app:layout_constraintBottom_toBottomOf="@id/footimg"
+                app:layout_constraintEnd_toStartOf="@id/footimg"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/footimg">
+
+                <TextView
+                    android:id="@+id/impact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/acme_regular"
+                    android:text="The Impact"
+                    android:textColor="@color/black"
+                    android:textSize="30sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                  />
+
+                <TextView
+                    android:id="@+id/impactdetail"
+                    android:layout_width="190dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center"
+                    android:text="Our platform has already been deployed in Many coal mines, allowing for real-time monitoring of carbon emissions. In just six months, these mines have collectively reduced their emissions by 7%, contributing to a cleaner, more sustainable future. Our goal is to expand this impact, aiming to reduce carbon emissions by 200 tons by 2025."
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/impact" />
+
+                <ImageView
+                    android:id="@+id/imgThirteen"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/img13_"
+                    app:layout_constraintEnd_toStartOf="@id/imgSeven"
+
+                    app:layout_constraintTop_toBottomOf="@id/impactdetail" />
+
+                <ImageView
+                    android:id="@+id/imgSeven"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/img7_"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/impactdetail" />
+
+               <TextView
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:text="Coal Mines\nRegistered"
+                   android:textColor="@color/white"
+                   app:layout_constraintTop_toBottomOf="@id/imgThirteen"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintEnd_toEndOf="@id/imgThirteen"
+                   android:gravity="center"
+                   android:layout_marginTop="-20dp"
+                   />
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Carbon Emmision reduction"
+                    android:textColor="@color/white"
+                    app:layout_constraintTop_toBottomOf="@id/imgSeven"
+                    app:layout_constraintStart_toStartOf="@id/imgSeven"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:gravity="center"
+                    android:layout_marginTop="-20dp"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Button
+                android:layout_width="190dp"
+                android:layout_height="65dp"
+                android:text="Join Us"
+                android:backgroundTint="@color/parrotGreen"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/impactconstraint"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_margin="30dp"
+                android:textSize="40dp"
+                android:fontFamily="sans-serif"
+                />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
