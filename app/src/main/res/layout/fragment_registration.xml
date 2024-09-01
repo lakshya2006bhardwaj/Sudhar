@@ -19,12 +19,17 @@
         android:textColor="@color/white"
         />
     <RadioGroup
+        android:id="@+id/grpRadio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:background="@drawable/registration_bg"
         app:layout_constraintTop_toBottomOf="@id/tvHeading"
+        app:layout_constraintBottom_toTopOf="@id/btnSave"
         android:layout_margin="20dp"
         >
         <RadioButton
+            android:id="@+id/coalBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Coal Mine"
@@ -32,10 +37,30 @@
             android:fontFamily="@font/acme_regular"
             android:textSize="18sp"
             />
-
-
+        <RadioButton
+            android:id="@+id/govtBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Government Authority"
+            android:textColor="@color/white"
+            android:fontFamily="@font/acme_regular"
+            android:textSize="18sp"
+            />
     </RadioGroup>
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        app:backgroundTint="@null"
+        android:fontFamily="@font/acme_regular"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:background="@drawable/green_rounded_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="40dp"
+        />
 
 
 
