@@ -54,7 +54,7 @@ class CoalMineEmployeeFragment : Fragment() {
                     .show()
             } else if (etDOB.text.isEmpty()) {
                 Toast.makeText(requireContext(), "Please select DOB", Toast.LENGTH_SHORT).show()
-            } else if (!radioGrp.isSelected) {
+            } else if (radioGrp.checkedRadioButtonId == -1) {
                 Toast.makeText(requireContext(), "Please select gender", Toast.LENGTH_SHORT).show()
             } else if (etFullAddress.text.isEmpty()) {
                 Toast.makeText(requireContext(), "Please enter full address", Toast.LENGTH_SHORT)
