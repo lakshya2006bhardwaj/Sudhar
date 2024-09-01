@@ -62,6 +62,13 @@ class CoalMineEmployeeFragment : Fragment() {
             } else {
                 currStep++
                 when (currStep) {
+                    1 -> {
+                        step1View.visibility = View.VISIBLE
+                        step2View.visibility = View.GONE
+                        step3View.visibility = View.GONE
+                        btnReset.text = "Reset"
+                        steps.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.bulletins))
+                    }
                     2 -> {
                         step1View.visibility = View.GONE
                         step2View.visibility = View.VISIBLE
@@ -74,7 +81,42 @@ class CoalMineEmployeeFragment : Fragment() {
                         step2View.visibility = View.GONE
                         step3View.visibility = View.VISIBLE
                         btnReset.text = "Previous"
+                        steps.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.bulletins_3))
+                        btnNext.text = "Save"
+                    }
+                }
+            }
+        }
+        btnReset.setOnClickListener {
+            if (currStep == 1) {
+                etFullName.text.clear()
+                etDOB.text.clear()
+                radioGrp.clearCheck()
+                etFullAddress.text.clear()
+            }
+            else{
+                currStep--
+                when (currStep) {
+                    1 -> {
+                        step1View.visibility = View.VISIBLE
+                        step2View.visibility = View.GONE
+                        step3View.visibility = View.GONE
+                        btnReset.text = "Reset"
+                        steps.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.bulletins))
+                    }
+                    2 -> {
+                        step1View.visibility = View.GONE
+                        step2View.visibility = View.VISIBLE
+                        step3View.visibility = View.GONE
+                        btnReset.text = "Previous"
                         steps.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.bulletins_2))
+                    }
+                    3->{
+                        step1View.visibility = View.GONE
+                        step2View.visibility = View.GONE
+                        step3View.visibility = View.VISIBLE
+                        btnReset.text = "Previous"
+                        steps.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.bulletins_3))
                         btnNext.text = "Save"
                     }
                 }
