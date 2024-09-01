@@ -5,4 +5,6 @@
     <color name="parrotGreen">#00FF00</color>
     <color name="darkgrey">#7C7D7E</color>
     <color name="verydarlgrey">#272A2E</color>
+    <color name="lightpink">#F0EFF0</color>
+    <color name="darkblue">#343A40</color>
 </resources>
