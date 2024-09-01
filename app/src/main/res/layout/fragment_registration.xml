@@ -3,7 +3,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".registration.RegistrationFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".registration.RegistrationFragment"
+    android:background="@color/black">
+    <TextView
+        android:id="@+id/tvHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="How do you want to register youself?"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:fontFamily="@font/acme_regular"
+        android:textColor="@color/white"
+        />
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvHeading"
+        android:layout_margin="20dp"
+        >
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Coal Mine"
+            android:textColor="@color/white"
+            android:fontFamily="@font/acme_regular"
+            android:textSize="18sp"
+            />
+
+
+    </RadioGroup>
+
 
 
 
