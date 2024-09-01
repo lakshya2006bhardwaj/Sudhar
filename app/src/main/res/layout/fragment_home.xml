@@ -431,7 +431,7 @@
                       />
 
                 <TextView
-                    android:id="@id/tvstatistic1"
+                    android:id="@+id/tvstatistic1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="500+ Coal Mines Monitored Nationwide."
@@ -464,7 +464,7 @@
                     />
 
                 <TextView
-                    android:id="@id/tvstatistic2"
+                    android:id="@+id/tvstatistic2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="10% Reduction in Carbon Emissions Over 2 Years."
@@ -496,7 +496,7 @@
                     />
 
                 <TextView
-                    android:id="@id/tvstatistic3"
+                    android:id="@+id/tvstatistic3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="100% Compliance rate Achieved in 2023."
