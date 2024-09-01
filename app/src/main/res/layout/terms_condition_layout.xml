@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
+        android:layout_margin="20dp"
+        android:text="Terms and Conditions"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:fontFamily="@font/inter_light_italic_300"
+        android:textFontWeight="1000"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/termslayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvHeading"
+        >
+
+        <TextView
+            android:id="@+id/tvSubHead"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:gravity="center"
+            android:layout_margin="20dp"
+            android:text="Read Below"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:fontFamily="@font/inter_light_italic_300"
+                       />
+
+        <TextView
+            android:id="@+id/sectionTitle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1. Acceptance Of Terms"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:paddingBottom="8dp"
+            app:layout_constraintTop_toBottomOf="@id/tvSubHead"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/sectionContent1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="By creating an account on the Carbon Footprint Monitoring System Platform, you agree to comply with and be bound by the following terms and conditions of use. Please read them carefully..."
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/sectionTitle1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginLeft="10dp"
+            />
+
+
+        <TextView
+            android:id="@+id/sectionTitle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2. User Responsibilities"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:paddingBottom="8dp"
+            app:layout_constraintTop_toBottomOf="@id/sectionContent1"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/sectionContent2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="You agree to provide accurate and complete information during the registration process.
+You are responsible for maintaining the confidentiality of your login credentials and for all activities that occur under your account.
+You must not share your account details with any unauthorized individuals."
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/sectionTitle2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginLeft="10dp"
+            />
+
+        <TextView
+            android:id="@+id/sectionTitle3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3. Access and Use of the Platform"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:paddingBottom="8dp"
+            app:layout_constraintTop_toBottomOf="@id/sectionContent2"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/sectionContent3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Access to the platform is restricted to authorized government employees. Unauthorized access or use of the platform is strictly prohibited.
+The platform is to be used solely for monitoring and managing Carbon Footprint data as part of your official duties. Misuse of the platform for any unauthorized activities is prohibited.    "
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/sectionTitle3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginLeft="10dp"
+            />
+
+
+        <TextView
+            android:id="@+id/sectionTitle4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4. Data Privacy and Security"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:paddingBottom="8dp"
+            app:layout_constraintTop_toBottomOf="@id/sectionContent3"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/sectionContent4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="All personal and organizational data provided by you during registration and use of the platform will be handled in accordance with our Privacy Policy.
+You agree to the collection, storage, and processing of your data as necessary for the operation of the platform. "
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/sectionTitle4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginLeft="10dp"
+            />
+
+        <TextView
+            android:id="@+id/sectionTitle5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5. Compliance with Laws "
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:paddingBottom="8dp"
+            app:layout_constraintTop_toBottomOf="@id/sectionContent4"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/sectionContent5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="You agree to comply with all applicable laws and regulations while using the platform, including those related to data protection, environmental monitoring, and government operations.
+Any breach of these terms may results in the termination of your account and potential legal action. "
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/sectionTitle5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginLeft="10dp"
+            />
+
+        <TextView
+            android:id="@+id/sectionTitle6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6.Limitation of Liability"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:paddingBottom="8dp"
+            app:layout_constraintTop_toBottomOf="@id/sectionContent5"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/sectionContent6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="The platform administrators are not liable for any direct, indirect, incidental, or consequential damages arising from your use of the platform.
+The platform is provided”as is” without any warranties of any kin"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/sectionTitle6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginLeft="10dp"
+            />
+
+        <TextView
+            android:id="@+id/sectionTitle7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7. Amendments"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:paddingBottom="8dp"
+            app:layout_constraintTop_toBottomOf="@id/sectionContent6"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/sectionContent7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="We reserve the right to amend these terms and conditions at any time. Any  changes will be communicated to you via your registered email address or through the platform. "
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/sectionTitle7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginLeft="10dp"
+            />
+
+        <TextView
+            android:id="@+id/sectionTitle8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8. Contact Information"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:paddingBottom="8dp"
+            app:layout_constraintTop_toBottomOf="@id/sectionContent7"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/sectionContent8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="For any questions or concerns regarding these terms, please contract our support team at sudhar453@gmail.com   "
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/sectionTitle8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginLeft="10dp"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:textSize="18dp"
+            app:layout_constraintTop_toBottomOf="@id/termslayout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginHorizontal="20dp"
+            />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
