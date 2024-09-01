@@ -224,6 +224,7 @@
                         android:background="@drawable/registration_bg"
                         android:padding="10dp"
                         android:inputType="number"
+                        android:maxLength="10"
                         android:textColor="@color/white"
                         android:textSize="18sp"
                         app:layout_constraintTop_toBottomOf="@id/tvPrimaryPhNum"
