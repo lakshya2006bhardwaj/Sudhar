@@ -7,10 +7,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Spinner
 import android.widget.Toast
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat
 import com.app.sudhar.R
 import com.app.sudhar.databinding.FragmentCoalMineEmployeeBinding
@@ -171,48 +173,78 @@ class CoalMineEmployeeFragment : Fragment() {
         }
     }
 
-        private fun showCustomDialog() {
-            val dialogView = layoutInflater.inflate(R.layout.confirm_password_registration_layout, null)
+    private fun showCustomDialog() {
+        val dialogView = layoutInflater.inflate(R.layout.confirm_password_registration_layout, null)
 
-            val dialogBuilder = AlertDialog.Builder(requireContext())
-                .setView(dialogView)
+        val dialogBuilder = AlertDialog.Builder(requireContext())
+            .setView(dialogView)
 
-            val submit = dialogView.findViewById<Button>(R.id.btnSubmit)
-            val alertDialog = dialogBuilder.create()
+        val submit = dialogView.findViewById<Button>(R.id.btnSubmit)
+        val alertDialog = dialogBuilder.create()
 
-            submit.setOnClickListener {
-                val userId = dialogView.findViewById<EditText>(R.id.etUserID).text.toString()
-                val password = dialogView.findViewById<TextInputEditText>(R.id.etPassword).text.toString()
-                val confirmPassword = dialogView.findViewById<EditText>(R.id.etConfirm).text.toString()
+        submit.setOnClickListener {
+            val userId = dialogView.findViewById<EditText>(R.id.etUserID).text.toString()
+            val password =
+                dialogView.findViewById<TextInputEditText>(R.id.etPassword).text.toString()
+            val confirmPassword = dialogView.findViewById<EditText>(R.id.etConfirm).text.toString()
 
-                if (password == confirmPassword) {
-                    // Proceed with the logic
-                    Toast.makeText(requireContext(), "Data Submitted", Toast.LENGTH_SHORT).show()
-                    alertDialog.dismiss()
-                    securityQuestionDialogBox()
+            if (password == confirmPassword) {
+                // Proceed with the logic
+                Toast.makeText(requireContext(), "Data Submitted", Toast.LENGTH_SHORT).show()
+                alertDialog.dismiss()
+                securityQuestionDialogBox()
 
-                } else {
-                    Toast.makeText(requireContext(), "Passwords do not match", Toast.LENGTH_SHORT).show()
-                }
-                // Dismiss the dialog after submission
+            } else {
+                Toast.makeText(requireContext(), "Passwords do not match", Toast.LENGTH_SHORT)
+                    .show()
             }
-
-            alertDialog.show()
+            // Dismiss the dialog after submission
         }
 
-    fun securityQuestionDialogBox(){
-        val dialogView = layoutInflater.inflate(R.layout.employee_confirm_password_registration, null)
+        alertDialog.show()
+    }
+
+    fun securityQuestionDialogBox() {
+        val dialogView =
+            layoutInflater.inflate(R.layout.employee_confirm_password_registration, null)
 
         val dialogBuilder = AlertDialog.Builder(requireContext())
             .setView(dialogView)
 
         val submit = dialogView.findViewById<Button>(R.id.btnsecure)
         val alertDialog = dialogBuilder.create()
+        val securitySpinner = dialogView.findViewById<Spinner>(R.id.securityspinner)
+        ArrayAdapter.createFromResource(
+            requireContext(),
+            R.array.security,
+            android.R.layout.simple_spinner_item
+        ).also { adapter ->
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            securitySpinner.adapter = adapter
+        }
+        securitySpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                val selectedItem = parent.getItemAtPosition(position).toString()
+
+                // You can add additional logic here based on the selected item
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>) {
+                // Handle the case where no item is selected
+            }
+        }
 
         submit.setOnClickListener {
-            val securityspinner = dialogView.findViewById<TextInputEditText>(R.id.securityspinner).text.toString()
-            val password = dialogView.findViewById<TextInputEditText>(R.id.etPassword).text.toString()
-            val confirmPassword = dialogView.findViewById<EditText>(R.id.etConfirmPassword).text.toString()
+
+            val password =
+                dialogView.findViewById<TextInputEditText>(R.id.etPassword).text.toString()
+            val confirmPassword =
+                dialogView.findViewById<EditText>(R.id.etConfirmPassword).text.toString()
 
             if (password == confirmPassword) {
                 // Proceed with the logic
@@ -220,35 +252,32 @@ class CoalMineEmployeeFragment : Fragment() {
                 alertDialog.dismiss()
 
             } else {
-                Toast.makeText(requireContext(), "Passwords do not match", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Passwords do not match", Toast.LENGTH_SHORT)
+                    .show()
             }
             // Dismiss the dialog after submission
         }
 
         alertDialog.show()
     }
+    private fun showDatePickerDialog() {
+        val calendar = Calendar.getInstance()
+
+        val datePickerDialog = DatePickerDialog(
+            requireContext(),
+            { _, year, monthOfYear, dayOfMonth ->
+                val selectedDate = Calendar.getInstance()
+                selectedDate.set(year, monthOfYear, dayOfMonth)
+                val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+                binding.etDOB.setText(dateFormat.format(selectedDate.time))
+            },
+            calendar.get(Calendar.YEAR),
+            calendar.get(Calendar.MONTH),
+            calendar.get(Calendar.DAY_OF_MONTH)
+        )
+        datePickerDialog.datePicker.maxDate = System.currentTimeMillis()
+        datePickerDialog.show()
     }
-
-
-
-private fun showDatePickerDialog() {
-    val calendar = Calendar.getInstance()
-
-    val datePickerDialog = DatePickerDialog(
-        requireContext(),
-        { _, year, monthOfYear, dayOfMonth ->
-            val selectedDate = Calendar.getInstance()
-            selectedDate.set(year, monthOfYear, dayOfMonth)
-            val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
-            binding.etDOB.setText(dateFormat.format(selectedDate.time))
-        },
-        calendar.get(Calendar.YEAR),
-        calendar.get(Calendar.MONTH),
-        calendar.get(Calendar.DAY_OF_MONTH)
-    )
-    datePickerDialog.datePicker.maxDate = System.currentTimeMillis()
-    datePickerDialog.show()
-}
 
 
 }
