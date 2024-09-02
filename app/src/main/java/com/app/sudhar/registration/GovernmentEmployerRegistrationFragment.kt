@@ -1,5 +1,6 @@
 package com.app.sudhar.registration
 
+import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.content.Context
 import android.os.Bundle
@@ -7,11 +8,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.app.sudhar.R
 import com.app.sudhar.databinding.FragmentGovernmentEmployerRegistrationBinding
 import com.app.sudhar.databinding.FragmentRegistrationBinding
+import com.google.android.material.textfield.TextInputEditText
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
@@ -93,6 +97,9 @@ class GovernmentEmployerRegistrationFragment : Fragment() {
                         steps.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.bulletins_3))
                         btnNext.text = "Save"
                     }
+                    4->{
+                        showCustomDialog()
+                    }
 
                 }
             }
@@ -138,6 +145,53 @@ class GovernmentEmployerRegistrationFragment : Fragment() {
 
         }
 
+    }
+
+
+    // In your Activity or Fragment
+    private fun showCustomDialog() {
+        val dialogView = layoutInflater.inflate(R.layout.confirm_password_registration_layout, null)
+
+        val dialogBuilder = AlertDialog.Builder(requireContext())
+            .setView(dialogView)
+
+        val submit = dialogView.findViewById<Button>(R.id.btnSubmit)
+        val alertDialog = dialogBuilder.create()
+
+        submit.setOnClickListener {
+            val userId = dialogView.findViewById<EditText>(R.id.etUserID).text.toString()
+            val password = dialogView.findViewById<TextInputEditText>(R.id.etPassword).text.toString()
+            val confirmPassword = dialogView.findViewById<EditText>(R.id.etConfirm).text.toString()
+
+            if (password == confirmPassword) {
+                // Proceed with the logic
+                Toast.makeText(requireContext(), "Data Submitted", Toast.LENGTH_SHORT).show()
+                alertDialog.dismiss()
+                showTermsAndConditionsDialog()
+            } else {
+                Toast.makeText(requireContext(), "Passwords do not match", Toast.LENGTH_SHORT).show()
+            }
+              // Dismiss the dialog after submission
+        }
+
+        alertDialog.show()
+    }
+
+    private fun showTermsAndConditionsDialog() {
+        val dialogView = layoutInflater.inflate(R.layout.terms_condition_layout, null)
+
+        val dialogBuilder = AlertDialog.Builder(requireContext())
+            .setView(dialogView)
+
+        val submit = dialogView.findViewById<Button>(R.id.btnSubmit)
+        val alertDialog = dialogBuilder.create()
+
+        submit.setOnClickListener {
+           alertDialog.dismiss()
+            // Dismiss the dialog after submission
+        }
+
+        alertDialog.show()
     }
 
 

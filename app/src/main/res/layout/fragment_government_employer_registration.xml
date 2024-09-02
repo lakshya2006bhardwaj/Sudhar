@@ -118,9 +118,7 @@
                         android:layout_marginTop="10dp"
                         android:background="@drawable/registration_bg"
                         android:clickable="false"
-                        android:enabled="false"
                         android:focusable="false"
-                        android:focusableInTouchMode="false"
                         android:padding="10dp"
                         android:textColor="@color/white"
                         android:textSize="18sp"
@@ -277,6 +275,8 @@
                         android:background="@drawable/registration_bg"
                         android:padding="10dp"
                         android:textColor="@color/white"
+                        android:inputType="number"
+                        android:maxLength="10"
                         android:textSize="18sp"
                         app:layout_constraintTop_toBottomOf="@id/tvPrimaryPhNum"
 
@@ -302,6 +302,8 @@
                         android:layout_marginTop="10dp"
                         android:background="@drawable/registration_bg"
                         android:padding="10dp"
+                        android:inputType="number"
+                        android:maxLength="10"
                         android:textColor="@color/white"
                         android:textSize="18sp"
                         app:layout_constraintTop_toBottomOf="@id/tvAltPhNum" />
@@ -315,6 +317,7 @@
                         android:text="Personal Email address"
                         android:textColor="@color/white"
                         android:textSize="15sp"
+                        android:inputType="textEmailAddress"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/etAltPhNum" />
 
@@ -352,6 +355,7 @@
                         android:layout_marginBottom="20dp"
                         android:background="@drawable/registration_bg"
                         android:padding="10dp"
+                        android:inputType="textEmailAddress"
                         android:textColor="@color/white"
                         android:textSize="18sp"
                         app:layout_constraintTop_toBottomOf="@id/tvOrgEmail"
