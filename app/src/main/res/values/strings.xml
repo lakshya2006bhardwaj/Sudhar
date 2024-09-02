@@ -2,4 +2,13 @@
     <string name="app_name">Sudhar</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="security">
+        <item>What is your mother’s maiden name?</item>
+        <item>What is your besfriend’s name?</item>
+        <item>What is the name of your first pet?</item>
+        <item>What is the name of the street you grew up on?</item>
+        <item>What is your favorite teacher’s name?</item>
+    </string-array>
+
 </resources>

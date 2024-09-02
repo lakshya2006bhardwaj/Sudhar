@@ -1,15 +1,20 @@
 package com.app.sudhar.registration
 
+import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat
 import com.app.sudhar.R
 import com.app.sudhar.databinding.FragmentCoalMineEmployeeBinding
+import com.google.android.material.textfield.TextInputEditText
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
@@ -67,82 +72,183 @@ class CoalMineEmployeeFragment : Fragment() {
                         step2View.visibility = View.GONE
                         step3View.visibility = View.GONE
                         btnReset.text = "Reset"
-                        steps.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.bulletins))
+                        steps.setImageDrawable(
+                            ContextCompat.getDrawable(
+                                requireContext(),
+                                R.drawable.bulletins
+                            )
+                        )
                     }
+
                     2 -> {
                         step1View.visibility = View.GONE
                         step2View.visibility = View.VISIBLE
                         step3View.visibility = View.GONE
                         btnReset.text = "Previous"
-                        steps.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.bulletins_2))
+                        steps.setImageDrawable(
+                            ContextCompat.getDrawable(
+                                requireContext(),
+                                R.drawable.bulletins_2
+                            )
+                        )
                     }
-                    3->{
+
+                    3 -> {
                         step1View.visibility = View.GONE
                         step2View.visibility = View.GONE
                         step3View.visibility = View.VISIBLE
                         btnReset.text = "Previous"
-                        steps.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.bulletins_3))
+                        steps.setImageDrawable(
+                            ContextCompat.getDrawable(
+                                requireContext(),
+                                R.drawable.bulletins_3
+                            )
+                        )
                         btnNext.text = "Save"
+                    }
+
+                    4 -> {
+                        showCustomDialog()
+                    }
+                }
+            }
+
+            btnReset.setOnClickListener {
+                if (currStep == 1) {
+                    etFullName.text.clear()
+                    etDOB.text.clear()
+                    radioGrp.clearCheck()
+                    etFullAddress.text.clear()
+                } else {
+                    currStep--
+                    when (currStep) {
+                        1 -> {
+                            step1View.visibility = View.VISIBLE
+                            step2View.visibility = View.GONE
+                            step3View.visibility = View.GONE
+                            btnReset.text = "Reset"
+                            steps.setImageDrawable(
+                                ContextCompat.getDrawable(
+                                    requireContext(),
+                                    R.drawable.bulletins
+                                )
+                            )
+                        }
+
+                        2 -> {
+                            step1View.visibility = View.GONE
+                            step2View.visibility = View.VISIBLE
+                            step3View.visibility = View.GONE
+                            btnReset.text = "Previous"
+                            steps.setImageDrawable(
+                                ContextCompat.getDrawable(
+                                    requireContext(),
+                                    R.drawable.bulletins_2
+                                )
+                            )
+                        }
+
+                        3 -> {
+                            step1View.visibility = View.GONE
+                            step2View.visibility = View.GONE
+                            step3View.visibility = View.VISIBLE
+                            btnReset.text = "Previous"
+                            steps.setImageDrawable(
+                                ContextCompat.getDrawable(
+                                    requireContext(),
+                                    R.drawable.bulletins_3
+                                )
+                            )
+                            btnNext.text = "Save"
+                        }
+
+                        4 -> {
+                            showCustomDialog()
+                        }
                     }
                 }
             }
         }
-        btnReset.setOnClickListener {
-            if (currStep == 1) {
-                etFullName.text.clear()
-                etDOB.text.clear()
-                radioGrp.clearCheck()
-                etFullAddress.text.clear()
-            }
-            else{
-                currStep--
-                when (currStep) {
-                    1 -> {
-                        step1View.visibility = View.VISIBLE
-                        step2View.visibility = View.GONE
-                        step3View.visibility = View.GONE
-                        btnReset.text = "Reset"
-                        steps.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.bulletins))
-                    }
-                    2 -> {
-                        step1View.visibility = View.GONE
-                        step2View.visibility = View.VISIBLE
-                        step3View.visibility = View.GONE
-                        btnReset.text = "Previous"
-                        steps.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.bulletins_2))
-                    }
-                    3->{
-                        step1View.visibility = View.GONE
-                        step2View.visibility = View.GONE
-                        step3View.visibility = View.VISIBLE
-                        btnReset.text = "Previous"
-                        steps.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.bulletins_3))
-                        btnNext.text = "Save"
-                    }
+    }
+
+        private fun showCustomDialog() {
+            val dialogView = layoutInflater.inflate(R.layout.confirm_password_registration_layout, null)
+
+            val dialogBuilder = AlertDialog.Builder(requireContext())
+                .setView(dialogView)
+
+            val submit = dialogView.findViewById<Button>(R.id.btnSubmit)
+            val alertDialog = dialogBuilder.create()
+
+            submit.setOnClickListener {
+                val userId = dialogView.findViewById<EditText>(R.id.etUserID).text.toString()
+                val password = dialogView.findViewById<TextInputEditText>(R.id.etPassword).text.toString()
+                val confirmPassword = dialogView.findViewById<EditText>(R.id.etConfirm).text.toString()
+
+                if (password == confirmPassword) {
+                    // Proceed with the logic
+                    Toast.makeText(requireContext(), "Data Submitted", Toast.LENGTH_SHORT).show()
+                    alertDialog.dismiss()
+                    securityQuestionDialogBox()
+
+                } else {
+                    Toast.makeText(requireContext(), "Passwords do not match", Toast.LENGTH_SHORT).show()
                 }
+                // Dismiss the dialog after submission
             }
+
+            alertDialog.show()
         }
 
+    fun securityQuestionDialogBox(){
+        val dialogView = layoutInflater.inflate(R.layout.employee_confirm_password_registration, null)
+
+        val dialogBuilder = AlertDialog.Builder(requireContext())
+            .setView(dialogView)
+
+        val submit = dialogView.findViewById<Button>(R.id.btnsecure)
+        val alertDialog = dialogBuilder.create()
+
+        submit.setOnClickListener {
+            val securityspinner = dialogView.findViewById<TextInputEditText>(R.id.securityspinner).text.toString()
+            val password = dialogView.findViewById<TextInputEditText>(R.id.etPassword).text.toString()
+            val confirmPassword = dialogView.findViewById<EditText>(R.id.etConfirmPassword).text.toString()
+
+            if (password == confirmPassword) {
+                // Proceed with the logic
+                Toast.makeText(requireContext(), "Data Submitted", Toast.LENGTH_SHORT).show()
+                alertDialog.dismiss()
+
+            } else {
+                Toast.makeText(requireContext(), "Passwords do not match", Toast.LENGTH_SHORT).show()
+            }
+            // Dismiss the dialog after submission
+        }
+
+        alertDialog.show()
+    }
     }
 
-    private fun showDatePickerDialog() {
-        val calendar = Calendar.getInstance()
 
-        val datePickerDialog = DatePickerDialog(
-            requireContext(),
-            { _, year, monthOfYear, dayOfMonth ->
-                val selectedDate = Calendar.getInstance()
-                selectedDate.set(year, monthOfYear, dayOfMonth)
-                val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
-                binding.etDOB.setText(dateFormat.format(selectedDate.time))
-            },
-            calendar.get(Calendar.YEAR),
-            calendar.get(Calendar.MONTH),
-            calendar.get(Calendar.DAY_OF_MONTH)
-        )
-        datePickerDialog.datePicker.maxDate = System.currentTimeMillis()
-        datePickerDialog.show()
-    }
+
+private fun showDatePickerDialog() {
+    val calendar = Calendar.getInstance()
+
+    val datePickerDialog = DatePickerDialog(
+        requireContext(),
+        { _, year, monthOfYear, dayOfMonth ->
+            val selectedDate = Calendar.getInstance()
+            selectedDate.set(year, monthOfYear, dayOfMonth)
+            val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+            binding.etDOB.setText(dateFormat.format(selectedDate.time))
+        },
+        calendar.get(Calendar.YEAR),
+        calendar.get(Calendar.MONTH),
+        calendar.get(Calendar.DAY_OF_MONTH)
+    )
+    datePickerDialog.datePicker.maxDate = System.currentTimeMillis()
+    datePickerDialog.show()
+}
 
 
 }
