@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
+import com.app.sudhar.R
 import com.app.sudhar.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -30,8 +32,10 @@ class HomeFragment : Fragment() {
     private fun initSetViews(){
         setViewPagerAdapter()
     }
-    private fun initClickListener(){
-
+    private fun initClickListener()=binding.apply{
+        calculatelayout.setOnClickListener {
+            findNavController().navigate(R.id.action_home_to_calculatorFragment)
+        }
     }
     private fun setViewPagerAdapter()=binding.apply{
         val fragmentList = arrayListOf(
