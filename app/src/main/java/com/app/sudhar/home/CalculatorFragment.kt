@@ -52,8 +52,8 @@ class CalculatorFragment : Fragment() {
 
         btnSave.setOnClickListener {
             when(dest){
-                "surface"->findNavController().navigate(R.id.action_registration_to_coalMineEmployeeFragment)
-                "underground"->findNavController().navigate(R.id.action_registration_to_governmentEmployerRegistrationFragment)
+                "surface"->findNavController().navigate(R.id.action_calculatorFragment_to_surfaceMiningCalculatorFragment)
+                "underground"->findNavController().navigate(R.id.action_calculatorFragment_to_undergroundMiningCalculatorFragment)
                 ""-> Toast.makeText(requireContext(), "Please select any one option", Toast.LENGTH_SHORT).show()
             }
         }
