@@ -8,11 +8,12 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.app.sudhar.R
+import com.app.sudhar.databinding.FragmentCalculatorBinding
 import com.app.sudhar.databinding.FragmentRegistrationBinding
 
 class CalculatorFragment : Fragment() {
 
-    private lateinit var binding: FragmentRegistrationBinding
+    private lateinit var binding: FragmentCalculatorBinding
     private var dest = ""
 
 
@@ -20,7 +21,7 @@ class CalculatorFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View{
-        binding = FragmentRegistrationBinding.inflate(inflater)
+        binding = FragmentCalculatorBinding.inflate(inflater)
         return binding.root
     }
 
