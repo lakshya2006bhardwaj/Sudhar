@@ -69,7 +69,7 @@
                 android:textColor="@color/black"
                 android:textSize="15dp"
                 android:inputType="number"
-                android:hint="Enter number of hours"
+                android:hint="Enter amount of diesel in litres"
                 />
             <TextView
                 android:id="@+id/tvMachineName2"
@@ -94,7 +94,7 @@
                 android:textColor="@color/black"
                 android:textSize="15dp"
                 android:inputType="number"
-                android:hint="Enter number of hours"
+                android:hint="Enter amount of diesel in litres"
                 />
             <TextView
                 android:id="@+id/tvMachinesElectricity"
@@ -129,7 +129,7 @@
                 android:textColor="@color/black"
                 android:textSize="15dp"
                 android:inputType="number"
-                android:hint="Enter number of hours"
+                android:hint="Enter amount of electricity in kWh"
                 />
             <TextView
                 android:id="@+id/tvMachineName4"
@@ -154,7 +154,7 @@
                 android:textColor="@color/black"
                 android:textSize="15dp"
                 android:inputType="number"
-                android:hint="Enter number of hours"
+                android:hint="Enter amount of electricity in kWh"
                 />
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/nextBtn"
