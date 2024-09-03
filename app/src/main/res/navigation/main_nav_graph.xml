@@ -47,4 +47,26 @@
         android:name="com.app.sudhar.registration.CoalMineEmployeeFragment"
         android:label="fragment_coal_mine_employee"
         tools:layout="@layout/fragment_coal_mine_employee" />
+    <fragment
+        android:id="@+id/surfaceMiningCalculatorFragment"
+        android:name="com.app.sudhar.home.SurfaceMiningCalculatorFragment"
+        android:label="fragment_surface_mining_calculator"
+        tools:layout="@layout/fragment_surface_mining_calculator" />
+    <fragment
+        android:id="@+id/undergroundMiningCalculatorFragment"
+        android:name="com.app.sudhar.home.UndergroundMiningCalculatorFragment"
+        android:label="fragment_underground_mining_calculator"
+        tools:layout="@layout/fragment_underground_mining_calculator" />
+    <fragment
+        android:id="@+id/calculatorFragment"
+        android:name="com.app.sudhar.home.CalculatorFragment"
+        android:label="fragment_calculator"
+        tools:layout="@layout/fragment_calculator" >
+        <action
+            android:id="@+id/action_calculatorFragment_to_surfaceMiningCalculatorFragment"
+            app:destination="@id/surfaceMiningCalculatorFragment" />
+        <action
+            android:id="@+id/action_calculatorFragment_to_undergroundMiningCalculatorFragment"
+            app:destination="@id/undergroundMiningCalculatorFragment" />
+    </fragment>
 </navigation>
