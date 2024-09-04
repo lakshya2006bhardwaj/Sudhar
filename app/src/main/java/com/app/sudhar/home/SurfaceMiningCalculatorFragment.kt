@@ -85,6 +85,7 @@ class SurfaceMiningCalculatorFragment : Fragment() {
 
                 }
             }
+            step++
         }
     }
 }
