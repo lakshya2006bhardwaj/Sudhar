@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import com.app.sudhar.R
 import com.app.sudhar.databinding.FragmentUndergroundMiningCalculatorBinding
 import com.github.mikephil.charting.animation.Easing
+import com.github.mikephil.charting.components.Legend
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
@@ -363,8 +364,9 @@ class UndergroundMiningCalculatorFragment : Fragment() {
         pieChart.setUsePercentValues(true)
 
         //remove the description label on the lower left corner, default true if not set
-        pieChart.description.isEnabled = false
-        pieChart.description.textColor = Color.WHITE
+        pieChart.description.isEnabled = true
+        pieChart.description.text = "Process"
+        pieChart.description.textColor = ContextCompat.getColor(requireContext(),R.color.white)
 
         //enabling the user to rotate the chart, default true
         pieChart.isRotationEnabled = true
@@ -372,6 +374,13 @@ class UndergroundMiningCalculatorFragment : Fragment() {
         pieChart.setDragDecelerationFrictionCoef(0.9f)
         //setting the first entry start from right hand side, default starting from top
         pieChart.setRotationAngle(0F)
+        pieChart.setDrawCenterText(true)
+        pieChart.setDrawEntryLabels(true)
+        pieChart.setDrawMarkers(false)
+
+        pieChart.legend.isEnabled = true
+        pieChart.legend.isWordWrapEnabled = true
+        pieChart.legend.textColor= ContextCompat.getColor(requireContext(),R.color.white)
 
         //highlight the entry when it is tapped, default true if not set
         pieChart.isHighlightPerTapEnabled = true
