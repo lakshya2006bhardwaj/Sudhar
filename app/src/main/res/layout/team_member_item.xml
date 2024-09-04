@@ -10,6 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"
         android:layout_marginTop="-70dp"
+        android:paddingBottom="10dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/team_background_card"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -29,6 +30,7 @@
             />
 
         <TextView
+            android:id="@+id/about"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Design is not just about aesthetics; it's about creating experiences that resonate with people. Working on Sudha has allowed me to design a platform that is not only functional but also user-friendly, ensuring our message reaches and impacts as many people as possible."
@@ -36,7 +38,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/name"
-            android:layout_marginTop="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginVertical="10dp"
             android:gravity="center"
             />
 
