@@ -41,89 +41,81 @@
                 app:layout_constraintBottom_toBottomOf="@id/viewPager"
                 app:layout_constraintEnd_toEndOf="@id/viewPager"
                 app:layout_constraintStart_toEndOf="@id/regiserBtn" />
-            <LinearLayout
-                android:id="@+id/calcAndMonitorLayout"
-                android:layout_width="match_parent"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/calculatelayout"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="2"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginVertical="20dp"
+                android:background="@drawable/green_rounded_bg"
                 android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                app:layout_constraintEnd_toStartOf="@id/monitorlayout"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/viewPager">
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/calculatelayout"
+
+                <TextView
+                    android:id="@+id/tvFootprint"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/green_rounded_bg"
-                    android:gravity="center"
-                    android:layout_margin="20dp"
-                    android:orientation="horizontal"
-                    android:paddingHorizontal="20dp"
-                    android:paddingVertical="5dp"
-                    >
+                    android:text="Calculate carbon\nfootprint"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/imgFootprint"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                    <TextView
-                        android:id="@+id/tvFootprint"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Calculate carbon\nfootprint"
-                        android:textColor="@color/black"
-                        android:textSize="12sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@id/imgFootprint"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                <ImageView
+                    android:id="@+id/imgFootprint"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/homefoot"
+                    app:layout_constraintBottom_toBottomOf="@id/tvFootprint"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvFootprint"
+                    app:layout_constraintTop_toTopOf="@id/tvFootprint" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <ImageView
-                        android:id="@+id/imgFootprint"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@drawable/homefoot"
-                        app:layout_constraintBottom_toBottomOf="@id/tvFootprint"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@id/tvFootprint"
-                        app:layout_constraintTop_toTopOf="@id/tvFootprint" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/monitorlayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginVertical="20dp"
+                android:background="@drawable/green_rounded_bg"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/calculatelayout"
+                app:layout_constraintTop_toBottomOf="@id/viewPager">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/monitorlayout"
+                <TextView
+                    android:id="@+id/tvMonitor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/green_rounded_bg"
-                    android:gravity="center"
-                    android:orientation="horizontal"
-                    android:layout_margin="20dp"
-                    android:paddingVertical="5dp"
-                    android:paddingHorizontal="20dp">
+                    android:text="Monitor carbon\nfootprint"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/imgMonitor"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                    <TextView
-                        android:id="@+id/tvMonitor"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Monitor carbon\nfootprint"
-                        android:textColor="@color/black"
-                        android:textSize="12sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@id/imgMonitor"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <ImageView
-                        android:id="@+id/imgMonitor"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/himecarbonmonitor"
-                        app:layout_constraintBottom_toBottomOf="@id/tvMonitor"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@id/tvMonitor"
-                        app:layout_constraintTop_toTopOf="@id/tvMonitor" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </LinearLayout>
-
-
+                <ImageView
+                    android:id="@+id/imgMonitor"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/himecarbonmonitor"
+                    app:layout_constraintBottom_toBottomOf="@id/tvMonitor"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvMonitor"
+                    app:layout_constraintTop_toTopOf="@id/tvMonitor" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/whatsudhar"
@@ -131,7 +123,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/sudhar"
-                app:layout_constraintTop_toBottomOf="@id/calcAndMonitorLayout"
+                app:layout_constraintTop_toBottomOf="@id/monitorlayout"
                 tools:layout_editor_absoluteX="-20dp">
 
                 <TextView
