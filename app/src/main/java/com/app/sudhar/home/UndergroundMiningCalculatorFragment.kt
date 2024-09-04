@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment
 import com.app.sudhar.R
 import com.app.sudhar.databinding.FragmentUndergroundMiningCalculatorBinding
 import com.github.mikephil.charting.animation.Easing
-import com.github.mikephil.charting.components.Legend
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
@@ -308,6 +307,8 @@ class UndergroundMiningCalculatorFragment : Fragment() {
                     etMachine4.text.clear()
                     grpData.visibility = View.GONE
                     pieChart.visibility = View.VISIBLE
+                    tvTotalEmission.visibility = View.VISIBLE
+                    tvTotalEmission.text = "Total Emission-- ${step1Emission+step2Emission+step3Emission+step4Emission+step5Emission+step6Emission} kg CO2"
                     initPieChart()
                     showPieChart()
                 }
