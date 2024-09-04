@@ -349,13 +349,13 @@ class UndergroundMiningCalculatorFragment : Fragment() {
         //providing color list for coloring different entries
         pieDataSet.colors = colors
         //grouping the data set from entry to chart
-        pieDataSet.valueTextColor = Color.WHITE
         val pieData = PieData(pieDataSet)
         pieData.setValueFormatter(PercentFormatter())
         //showing the value of the entries, default true if not set
         pieData.setDrawValues(true)
 
         pieChart.setData(pieData)
+        pieChart.setEntryLabelColor(Color.WHITE)
         pieChart.invalidate()
     }
     private fun initPieChart()=binding.apply{
@@ -364,6 +364,7 @@ class UndergroundMiningCalculatorFragment : Fragment() {
 
         //remove the description label on the lower left corner, default true if not set
         pieChart.description.isEnabled = false
+        pieChart.description.textColor = Color.WHITE
 
         //enabling the user to rotate the chart, default true
         pieChart.isRotationEnabled = true
