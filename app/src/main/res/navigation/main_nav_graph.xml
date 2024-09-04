@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_home_to_calculatorFragment"
             app:destination="@id/calculatorFragment" />
+        <action
+            android:id="@+id/action_home_to_registration"
+            app:destination="@id/registration" />
     </fragment>
     <fragment
         android:id="@+id/about"

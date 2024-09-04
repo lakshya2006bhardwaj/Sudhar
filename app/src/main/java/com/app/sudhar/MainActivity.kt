@@ -21,6 +21,31 @@ class MainActivity : AppCompatActivity() {
 
         setupWithNavController(binding.bottomNavigationView, navController)
         binding.bottomNavigationView.itemIconTintList = null
+        binding.bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.home -> {
+                    navController.navigate(R.id.home)
+                    true
+                }
+                R.id.about -> {
+                    navController.navigate(R.id.about)
+                    true
+                }
+                R.id.registration -> {
+                    navController.navigate(R.id.registration)
+                    true
+                }
+                R.id.dashboard -> {
+                    navController.navigate(R.id.dashboard)
+                    true
+                }
+                R.id.contact -> {
+                    navController.navigate(R.id.contact)
+                    true
+                }
+                else -> false
+            }
+        }
         val topLevelDestinationIds: Set<Int> = setOf(
             R.id.home,
             R.id.about,

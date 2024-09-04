@@ -36,6 +36,9 @@ class HomeFragment : Fragment() {
         calculatelayout.setOnClickListener {
             findNavController().navigate(R.id.action_home_to_calculatorFragment)
         }
+        regiserBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_home_to_registration)
+        }
     }
     private fun setViewPagerAdapter()=binding.apply{
         val fragmentList = arrayListOf(
